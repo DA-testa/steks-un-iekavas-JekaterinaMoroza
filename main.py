@@ -1,4 +1,4 @@
-# python3
+#python3
 
 from collections import namedtuple
 
@@ -20,12 +20,11 @@ def find_mismatch(text):
                 return i + 1
             if not are_matching (opening_brackets_stack.pop().char, next):
                 return i + 1
-            if opening_brackets_stack:
+    if opening_brackets_stack:
                 return opening_brackets_stack[0].position + 1
-            else:
-                return "Success"
-                
-
+            
+    return "Success" 
+    
 def main():
 
     print("Izvēlies I vai F: ")
