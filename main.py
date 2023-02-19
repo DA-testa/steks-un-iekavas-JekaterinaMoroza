@@ -14,32 +14,33 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             opening_brackets_stack.append(Bracket (next, i))
-            pass
 
         if next in ")]}":
             if not opening_brackets_stack:
-            return i+1
-            if not are_matching (opening_brackets_stack.pop().next, next):
-                return i+1
+                return i + 1
+            if not are_matching (opening_brackets_stack.pop().char, next):
+                return i + 1
             if opening_brackets_stack:
-                return opening_brackets_stack[0].position+1:
+                return opening_brackets_stack[0].position + 1
+            else:
                 return "Success"
                 
-            pass
-
 
 def main():
+
+    print("Izvēlies I vai F: ")
     text = input()
-    mismatch = find_mismatch(text)
-    if text[0]== "I":
-        text=(input):
-            if "F" in text:
-                pass
-            mismatch = find_mismatch(text)
-            
-    if not mismatch:
-     print ("Success")
-     else:
-            print (mismatch)
+
+    if "I" in text:
+        text=input()
+        mismatch = find_mismatch(text)
+        print(mismatch)
+
+    elif "F" in text:
+        mismatch = find_mismatch(text)
+
+    else:
+        print("Nepareiza izvēle!")
+
 if __name__ == "__main__":
     main()
